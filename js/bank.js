@@ -8,7 +8,7 @@ function submit(){
 
     // Validation
     if(userEmail == 'son@gmail.com' && userPassword == '12345'){
-        console.log('thik ase')
+        window.location.href = 'bank.html';
     }
     else{
         alert("thik nai.....valo kore mone kor")
