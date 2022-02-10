@@ -1,3 +1,4 @@
+// Index JS
 function submit(){
     // Get user Email
     const emailField = document.getElementById('user-email');
