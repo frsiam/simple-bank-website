@@ -21,7 +21,35 @@ document.getElementById('deposite-button').addEventListener('click',function(){
     const totalBalanceAmount = depositeInput + currentBalanceAmount;
     balanceTotal.innerText = totalBalanceAmount;
 
-
     //clear the deposite input field
     document.getElementById('deposite-input').value = "";
+});
+
+//handle withdraw event handler
+
+document.getElementById('withdraw-button').addEventListener('click',function(){
+    const withdrawInput = document.getElementById('withdraw-input');
+    const withdrawInputText = withdrawInput.value;
+    const withdrawInputAmount = parseFloat(withdrawInputText);
+
+    //set withdraw total
+    const withdrawBalance = document.getElementById('withdraw');
+    const withdrawText = withdrawBalance.innerText;
+    const currentWithdrawAmount = parseFloat(withdrawText);
+
+    const newTotalWithdraw = withdrawInputAmount + currentWithdrawAmount;
+
+    withdrawBalance.innerText = newTotalWithdraw;
+    
+    //update balance
+    const presentBalance = document.getElementById('total-balance');
+    const presentBalanceText = presentBalance.innerText;
+    const presentBalanceAmount = parseFloat(presentBalanceText);
+
+    const totalBalanceAmount = presentBalanceAmount - withdrawInputAmount;
+
+    presentBalance.innerText = totalBalanceAmount;
+
+    // clear the wihtdraw input field
+    withdrawInput.value = "";
 })
